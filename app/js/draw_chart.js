@@ -110,10 +110,10 @@ exports.draw_job_chart = function(data) {
             data: data
         }]
     });
-    job_chart.on('dblclick', function(params) {
-        //console.log(params.data);
-        reload_all_charts(['job'], [params.data.name]);
-    });
+    // job_chart.on('dblclick', function(params) {
+    //     //console.log(params.data);
+    //     reload_all_charts(['job'], [params.data.name]);
+    // });
 }
 
 exports.draw_marital_chart = function(data) {
