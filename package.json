@@ -1,0 +1,25 @@
+{
+    "name": "data_vis",
+    "version": "0.0.1",
+    "description": "a semester project for data mining",
+    "main": "main.js",
+    "dependencies": {
+        "echarts": "^3.5.4",
+        "echarts-wordcloud": "^1.0.3",
+        "jquery": "^3.2.1",
+        "jsdom": "^10.1.0",
+        "mysql": "^2.13.0"
+    },
+    "devDependencies": {
+        "devtron": "^1.4.0",
+        "electron": "^1.6.6",
+        "electron-packager": "^8.7.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "./node_modules/.bin/electron .",
+        "package": "electron-packager . --overwrite --asar=true --platform=win32 --arch=x64 --icon=app/img/icon.ico --prune=true --out=release"
+    },
+    "author": "Li Shang",
+    "license": "MIT"
+}

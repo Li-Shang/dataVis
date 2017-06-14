@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Visualization</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <a href="https://github.com/Li-Shang">
+        <img style="position: absolute; top: 0; right: 0; border: 0;"
+        src="../img/fork_me_on_github.png" alt="Fork me on GitHub" />
+    </a>
+
+    <div class="row setup-content" id="import-panel">
+      <div class="col-xs-6 col-sm-6 col-md-6  col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+        <!-- <div class="col-md-12"> -->
+          <h3>Import to Mysql</h3>
+          <div class="form-group">
+            <label class="control-label">User</label>
+            <input id="user" required="required" maxlength="100" type="text" class="form-control" placeholder="Enter User" />
+          </div>
+          <div class="form-group">
+            <label class="control-label">Password</label>
+            <input id="password" maxlength="100" type="password" class="form-control" placeholder="Enter Password" />
+          </div>
+          <button id='imported' class="btn btn-primary nextBtn btn-lg" type="button" >I have imported</button>
+          <button id='import' class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Import</button>
+        <!-- </div> -->
+      </div>
+    </div>
+
+    <div id="options" class="container">
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Age</button>
+            <input type="checkbox" class="hidden" value="age"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Job</button>
+            <input type="checkbox" class="hidden" value="job"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Marital</button>
+            <input type="checkbox" class="hidden" value="marital"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Education</button>
+            <input type="checkbox" class="hidden" value="education"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Time</button>
+            <input type="checkbox" class="hidden" value="time"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Default</button>
+            <input type="checkbox" class="hidden" value="default"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Balance</button>
+            <input type="checkbox" class="hidden" value="balance"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Housing</button>
+            <input type="checkbox" class="hidden" value="housing"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Loan</button>
+            <input type="checkbox" class="hidden" value="loan"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Contact</button>
+            <input type="checkbox" class="hidden" value="contact"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Duration</button>
+            <input type="checkbox" class="hidden" value="duration"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Campaign</button>
+            <input type="checkbox" class="hidden" value="campaign"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Pdays</button>
+            <input type="checkbox" class="hidden" value="pdays"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Previous</button>
+            <input type="checkbox" class="hidden" value="previous"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Poutcome</button>
+            <input type="checkbox" class="hidden" value="poutcome"/>
+        </span>
+        <span class="button-checkbox">
+            <button type="button" class="btn btn-sm" data-color="success">
+                <span class="glyphicon glyphicon-unchecked"> </span> Y</button>
+            <input type="checkbox" class="hidden" value="y"/>
+        </span>
+
+
+        <button id="submit-btn" class="btn btn-primary">submit</button>
+    </div>
+    <div id="tips"></div>
+    <div id="limits">
+        <button id="ageq" class="btn btn-default query">
+        <a class="queryname"> age</a>
+        <input type="text" name="age1" value="all">
+        <input type="text" name="age2" value="all">
+        </button>
+        <button id="jobq" class="btn btn-default query">
+        <a class="queryname"> job</a>
+        <select class="selectpicker" data-style="btn-primary" name="job">
+          <option value="all">all</option>
+          <option value="admin.">admin.</option>
+          <option value="unknown">unknown</option>
+          <option value="unemployed">unemployed</option>
+          <option value="management">management</option>
+          <option value="housemaid">housemaid</option>
+          <option value="entrepreneur">entrepreneur</option>
+          <option value="student">student</option>
+          <option value="blue-collar">blue-collar</option>
+          <option value="self-employed">self-employed</option>
+          <option value="retired">retired</option>
+          <option value="technician">technician</option>
+          <option value="services">services</option>
+        </select>
+        </button>
+        <button id="maritalq" class="btn btn-default query">
+        <a class="queryname"> marital</a>
+        <select class="selectpicker" data-style="btn-primary" name="marital">
+          <option value="all">all</option>
+          <option value="married">married</option>
+          <option value="divorced">divorced</option>
+          <option value="single">single</option>
+        </select>
+        </button>
+        <button id="educationq" class="btn btn-default query">
+        <a class="queryname"> education</a>
+        <select class="selectpicker" data-style="btn-primary" name="education">
+          <option value="all">all</option>
+          <option value="unknown">unknown</option>
+          <option value="secondary">secondary</option>
+          <option value="primary">primary</option>
+          <option value="tertiary">tertiary</option>
+        </select>
+        </button>
+        <button id="defaultq" class="btn btn-default query">
+        <a class="queryname" > default</a>
+        <select name="default">
+          <option value="all">all</option>
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+        </button>
+        <button id="balanceq" class="btn btn-default query">
+        <a class="queryname" > balance</a>
+        <input type="text" value="all">
+        <input type="text" value="all">
+        </button>
+        <button id="housingq" class="btn btn-default query">
+        <a class="queryname"> housing</a>
+        <select name="housing">
+          <option value="all">all</option>
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+        </button>
+        <button id="loanq" class="btn btn-default query">
+        <a class="queryname"> loan</a>
+        <select name="loan">
+          <option value="all">all</option>
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+        </button>
+        <button id="contactq" class="btn btn-default query">
+        <a class="queryname"> contact</a>
+        <select name="contact">
+          <option value="all">all</option>
+          <option value="unknown">unknown</option>
+          <option value="telephone">telephone</option>
+          <option value="cellular">cellular</option>
+        </select>
+        </button>
+        <button id="dayq"  class="btn btn-default query">
+        <a class="queryname"> day</a>
+        <input type="text" name="day1" value="all">
+        <input type="text" name="day2" value="all">
+        </button>
+        <button  id="monthq" class="btn btn-default query">
+        <a class="queryname"> month</a>
+        <select name="month">
+          <option value="all">all</option>
+          <option value="jan">jan</option>
+          <option value="feb">feb</option>
+          <option value="mar">mar</option>
+          <option value="apr">apr</option>
+          <option value="may">may</option>
+          <option value="jun">jun</option>
+          <option value="jul">jul</option>
+          <option value="aug">aug</option>
+          <option value="sep">sep</option>
+          <option value="oct">oct</option>
+          <option value="nov">nov</option>
+          <option value="dec">dec</option>
+        </select>
+        </button>
+        <button id="durationq" class="btn btn-default query">
+        <a class="queryname"> duration</a>
+        <input type="text" name="duration1" value="all">
+        <input type="text" name="duration2" value="all">
+        </button>
+        <button id="campaignq" class="btn btn-default query">
+        <a class="queryname">campaign</a>
+        <input type="text" name="campaign1" value="all">
+        <input type="text" name="campaign2" value="all">
+        </button>
+        <button id="pdaysq" class="btn btn-default query">
+            <a class="queryname">pdays</a>
+            <input type="text" name="pdays1" value="all">
+            <input type="text" name="pdays2" value="all">
+        </button>
+        <button id="previousq" class="btn btn-default query">
+            <a class="queryname">previous</a>
+            <input type="text" name="previous1" value="all">
+            <input type="text" name="previous2" value="all">
+        </button>
+        <button id="poutcomeq" class="btn btn-default query">
+        <a class="queryname">poutcome</a>
+        <select name="poutcome">
+            <option value="all">all</option>
+          <option value="unknown">unknown</option>
+          <option value="success">unknown</option>
+          <option value="failure">unknown</option>
+          <option value="other">unknown</option>
+        </select>
+        </button>
+        <button id="yq" class="btn btn-default query">
+        <a class="queryname"> credit</a>
+        <select name="y">
+          <option value="all">all</option>
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+        </button>
+    </div>
+    <div id="charts"></div>
+</body>
+    <script>
+    window.$ = window.jQuery = require('jquery');
+
+    $(document).ready(function() {
+        $('.query').each(function() {
+            $(this).hide();
+        });
+
+        $('#imported').on('click', function() {
+            $('#import-panel').hide();
+        });
+        $('#import').on('click', function() {
+            console.log('import button clicked.');
+            let sql_config = require('../js/sql_config.js');
+            let user = $('#user').val(),
+                pwd = $('#password').val();
+            console.log(user, pwd);
+            sql_config.import2mysql(user, pwd);
+        });
+
+
+        $('.button-checkbox').each(function() {
+            let $button = $(this).find('button');
+            let $checkbox = $(this).find('input:checkbox');
+            let $icon = $button.find('span');
+
+            $button.on('click', function() {
+                if($checkbox.is(':checked')) {
+                    $icon.removeClass();
+                    $icon.addClass('glyphicon glyphicon-unchecked');
+                    $button.removeClass('btn-success');
+                    $checkbox.prop('checked', false);
+                    delete selected_properties[$checkbox.val()]
+                    //setupTips();
+                } else {
+                    $icon.removeClass();
+                    $icon.addClass('glyphicon glyphicon-check');
+                    $button.addClass('btn-success');
+                    $checkbox.prop('checked', true);
+                    selected_properties[$checkbox.val()] = 'all';
+                    //console.log(selected_properties);
+                    //setupLimits($checkbox.val());
+                    $('#'+$checkbox.val()+'q').show();
+                    //setupTips();
+                }
+            });
+        });
+
+        // function setupLimits(property) {
+        //     $('#limits')
+        //     .empty()
+        //     .append('<div class="input-group" style="width:300px"><span class="input-group-addon">' + property +
+        //     '</span>\
+        //         <input type="text" class="form-control" placeholder="all">\
+        //         <span class="input-group-btn">\
+        //         <button class="btn btn-success">OK</button>\
+        //     </span></div>');
+        //     $('#limits button').on('click', function() {
+        //         selected_properties[property] = $('#limits input:text').val();
+        //         setupTips();
+        //     });
+        // }
+        // function setupTips() {
+        //     let property_text = "PROPERTY TO SHOW：", limit_text = "LIMITS ";
+        //     for (let i in selected_properties) {
+        //         property_text += i;
+        //         property_text += ', ';
+        //         if (selected_properties[i] != 'all') {
+        //             limit_text += ', ';
+        //             limit_text += i;
+        //             limit_text += ': ';
+        //             limit_text += selected_properties[i];
+        //         }
+        //     }
+        //     $('#tips').empty().append('<p>' + property_text + '<br />' + limit_text +'</p>')
+        // }
+    });
+    </script>
+    <script src="../js/renderer.js"> </script>
+</html>
