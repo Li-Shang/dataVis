@@ -277,6 +277,9 @@
             let sql_config = require('../js/sql_config.js');
             let user = $('#user').val(),
                 pwd = $('#password').val();
+            if (pwd == undefined) {
+                pwd = '';
+            }
             console.log(user, pwd);
             sql_config.import2mysql(user, pwd);
         });
