@@ -279,18 +279,28 @@ exports.draw_balance_chart = function(data) {
                         title: 'go back',
                         icon: 'image://../img/select.png',
                         onclick: function() {
+                            balance_chart.dispose();
                             draw.draw_balance_chart(raw_data);
                         }
                     }
                 }
             }
         };
+        balance_chart.dispose();
         balance_chart = echarts.init(document.getElementById('balance-chart'));
         balance_chart.setOption(option);
         balance_chart.on('dblclick', function(params) {
-            query_and_draw(['balance'], ['balance'], [
-                [0, 5000]
-            ]);
+            let index = params.dataIndex;
+            let value;
+            if (index == 0) {
+                value = [-10000, 0];
+            } else if (index == 7) {
+                value == [30000, 100000];
+            } else {
+                value = [index * 5000 - 5000, index * 5000];
+            }
+            balance_chart.dispose();
+            query_and_draw(['balance'], ['balance'], [value]);
         });
     }
 

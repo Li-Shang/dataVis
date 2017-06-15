@@ -306,6 +306,10 @@
                     selected_properties[$checkbox.val()] = 'all';
                     //console.log(selected_properties);
                     //setupLimits($checkbox.val());
+                    if ($checkbox.val() == 'time') {
+                        $('#dayq').show();
+                        $('#monthq').show();
+                    }
                     $('#'+$checkbox.val()+'q').show();
                     //setupTips();
                 }
